@@ -1,0 +1,679 @@
+.ipsuperview-overview {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.ipsuperview-overview h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #18283a;
+}
+
+.ipsuperview-panel {
+  border: 1px solid rgba(17, 33, 54, 0.1);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 250, 253, 0.98) 100%);
+  box-shadow: 0 14px 34px rgba(19, 33, 51, 0.06);
+  padding: 1rem 1.05rem 1.05rem;
+}
+
+.ipsuperview-panel[hidden] {
+  display: none !important;
+}
+
+.ipsuperview-panel--details {
+  padding-top: 0.9rem;
+}
+
+.ipsuperview-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.ipsuperview-summarybox {
+  border: 1px solid rgba(21, 101, 192, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 42%),
+    linear-gradient(135deg, #eef6ff 0%, #f7fbff 55%, #edf3ff 100%);
+  border-radius: 18px;
+  padding: 1.15rem 1.2rem;
+  box-shadow: 0 18px 36px rgba(33, 99, 155, 0.08);
+}
+
+.ipsuperview-summarybox__title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #12314f;
+  margin-bottom: 0.45rem;
+}
+
+.ipsuperview-summarybox__text {
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.ipsuperview-scantoolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(24, 36, 51, 0.08);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(244, 247, 250, 0.98) 100%);
+}
+
+.ipsuperview-scantoolbar__label {
+  color: #314354;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.ipsuperview-scantoolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.ipsuperview-scantoolbar__actions form {
+  margin: 0;
+}
+
+.ipsuperview-cards {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+}
+
+.ipsuperview-card {
+  border: 1px solid rgba(24, 36, 51, 0.12);
+  border-radius: 16px;
+  padding: 1rem 1rem 0.95rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+  box-shadow: 0 12px 28px rgba(24, 36, 51, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.ipsuperview-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(80, 96, 122, 0.16);
+}
+
+.ipsuperview-card__label {
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: #5f6c7b;
+}
+
+.ipsuperview-card__value {
+  margin-top: 0.4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #16202a;
+}
+
+.ipsuperview-card--assigned {
+  border-color: rgba(32, 99, 155, 0.18);
+}
+
+.ipsuperview-card--assigned::before {
+  background: linear-gradient(90deg, #4e9bdf 0%, #81bbea 100%);
+}
+
+.ipsuperview-card--duplicate {
+  border-color: rgba(186, 79, 39, 0.2);
+}
+
+.ipsuperview-card--duplicate::before {
+  background: linear-gradient(90deg, #d26c42 0%, #f2a772 100%);
+}
+
+.ipsuperview-card--free {
+  border-color: rgba(57, 125, 73, 0.2);
+}
+
+.ipsuperview-card--free::before {
+  background: linear-gradient(90deg, #58a16b 0%, #93d59f 100%);
+}
+
+.ipsuperview-card--neutral {
+  border-color: rgba(80, 96, 122, 0.18);
+}
+
+.ipsuperview-card--neutral::before {
+  background: linear-gradient(90deg, #708298 0%, #9aacc0 100%);
+}
+
+.ipsuperview-card--stale {
+  border-color: rgba(173, 125, 31, 0.22);
+}
+
+.ipsuperview-card--stale::before {
+  background: linear-gradient(90deg, #b98b2b 0%, #e3ba63 100%);
+}
+
+.ipsuperview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: #4b5563;
+}
+
+.ipsuperview-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(238, 243, 247, 0.9);
+  border: 1px solid rgba(95, 108, 123, 0.12);
+}
+
+.ipsuperview-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: -0.25rem 0 0.25rem;
+}
+
+.ipsuperview-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #3d4854;
+  font-size: 0.9rem;
+}
+
+.ipsuperview-workspace {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(24, 36, 51, 0.1);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.82), transparent 34%),
+    linear-gradient(135deg, #f6f9fc 0%, #fbfcfe 56%, #f0f5fa 100%);
+  box-shadow: 0 14px 34px rgba(19, 33, 51, 0.05);
+  position: sticky;
+  top: 0.65rem;
+  z-index: 18;
+}
+
+.ipsuperview-workspace__intro {
+  display: grid;
+  gap: 0.22rem;
+}
+
+.ipsuperview-workspace__eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #597084;
+  font-weight: 700;
+}
+
+.ipsuperview-workspace__title {
+  color: #1a334d;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ipsuperview-workspace__nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.65rem;
+}
+
+.ipsuperview-workspace__tab {
+  display: grid;
+  gap: 0.18rem;
+  align-content: start;
+  text-align: left;
+  min-height: 72px;
+  padding: 0.8rem 0.85rem;
+  border: 1px solid rgba(24, 36, 51, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #284153;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, box-shadow 120ms ease;
+}
+
+.ipsuperview-workspace__tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(24, 36, 51, 0.18);
+  box-shadow: 0 10px 22px rgba(18, 31, 44, 0.08);
+}
+
+.ipsuperview-workspace__tab.is-active {
+  background: linear-gradient(180deg, #163a58 0%, #214a6d 100%);
+  border-color: #163a58;
+  color: #f4f9ff;
+  box-shadow: 0 16px 28px rgba(22, 58, 88, 0.2);
+}
+
+.ipsuperview-workspace__tablabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.ipsuperview-workspace__tabmeta {
+  font-size: 0.8rem;
+  opacity: 0.82;
+}
+
+.ipsuperview-legend__dot {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(24, 36, 51, 0.18);
+}
+
+.ipsuperview-legend__dot--assigned {
+  background: #d4ebff;
+}
+
+.ipsuperview-legend__dot--duplicate {
+  background: #ffd9c8;
+}
+
+.ipsuperview-legend__dot--free {
+  background: #dff4e3;
+}
+
+.ipsuperview-sectionhint {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  color: #5b6773;
+}
+
+.ipsuperview-filterbox {
+  margin-bottom: 0.8rem;
+  max-width: 380px;
+}
+
+.ipsuperview-quickfilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: -0.2rem 0 0.9rem;
+}
+
+.ipsuperview-quickjump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.1rem 0 0.85rem;
+}
+
+.ipsuperview-quickfilters__btn {
+  border: 1px solid rgba(24, 36, 51, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: #284153;
+  padding: 0.48rem 0.8rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.ipsuperview-quickfilters__btn:hover {
+  background: #f5f8fc;
+  border-color: rgba(24, 36, 51, 0.18);
+}
+
+.ipsuperview-quickfilters__btn.is-active {
+  background: #173a59;
+  border-color: #173a59;
+  color: #fff;
+}
+
+.ipsuperview-grid {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+}
+
+.ipsuperview-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  border-radius: 11px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #13212c;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.ipsuperview-cell:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(18, 31, 44, 0.12);
+}
+
+.ipsuperview-cell--assigned,
+.ipsuperview-badge--assigned {
+  background: #d4ebff;
+  border-color: #8ac0ef;
+}
+
+.ipsuperview-cell--duplicate,
+.ipsuperview-badge--duplicate {
+  background: #ffd9c8;
+  border-color: #f6a47d;
+}
+
+.ipsuperview-cell--free,
+.ipsuperview-badge--free {
+  background: #dff4e3;
+  border-color: #98d7a6;
+}
+
+.ipsuperview-badge--freshness-fresh {
+  background: #e6f4ea;
+  border-color: #9fd0ab;
+  color: #215d34;
+}
+
+.ipsuperview-badge--freshness-stale {
+  background: #fff3d9;
+  border-color: #e2c27d;
+  color: #7b5a16;
+}
+
+.ipsuperview-badge--freshness-aged {
+  background: #ffe0d6;
+  border-color: #e1a18f;
+  color: #903d1f;
+}
+
+.ipsuperview-badge--freshness-unknown {
+  background: #eef1f5;
+  border-color: #c8d0d8;
+  color: #536171;
+}
+
+.ipsuperview-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.ipsuperview-online {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.ipsuperview-online--up {
+  background: #dff4e3;
+  border-color: #98d7a6;
+  color: #245b33;
+}
+
+.ipsuperview-online--down {
+  background: #f1f3f5;
+  border-color: #d0d5db;
+  color: #5f6b77;
+}
+
+.ipsuperview-details {
+  border: 1px solid rgba(24, 36, 51, 0.12);
+  border-radius: 16px;
+  background: #fbfcfd;
+  padding: 0.95rem 1rem 1rem;
+}
+
+.ipsuperview-details > summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #182433;
+  margin-bottom: 0.35rem;
+}
+
+.ipsuperview-details[open] > summary {
+  margin-bottom: 0.75rem;
+}
+
+.ipsuperview-identity,
+.ipsuperview-timestamp {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.ipsuperview-identity strong,
+.ipsuperview-timestamp strong {
+  color: #18324c;
+  font-weight: 700;
+}
+
+.ipsuperview-identity span,
+.ipsuperview-timestamp span,
+.ipsuperview-subtle {
+  color: #647382;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.ipsuperview-formhint {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+.ipsuperview-formhint--muted {
+  color: #7b8794;
+}
+
+.ipsuperview-formhint--error {
+  color: #a34328;
+}
+
+.ipsuperview-formnote {
+  margin-top: 0.4rem;
+  color: #5c6977;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.ipsuperview-cidrpreview {
+  margin-top: 0.9rem;
+  padding: 1rem 1.05rem;
+  border-radius: 14px;
+  border: 1px solid rgba(21, 101, 192, 0.12);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.7), transparent 38%),
+    linear-gradient(135deg, #f5f9ff 0%, #fcfdff 52%, #f2f6fb 100%);
+}
+
+.ipsuperview-cidrpreview__status {
+  margin-top: 0;
+}
+
+.ipsuperview-cidrpreview__grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.ipsuperview-cidrpreview__item {
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(24, 36, 51, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.ipsuperview-cidrpreview__label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: #607182;
+}
+
+.ipsuperview-cidrpreview__value {
+  display: block;
+  margin-top: 0.35rem;
+  color: #18324c;
+  font-size: 1rem;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.ipsuperview-labelform {
+  border: 1px solid rgba(24, 36, 51, 0.12);
+  border-radius: 12px;
+  background: #fbfcfd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ipsuperview-labelform__grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.ipsuperview-labelform__grid label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: #22303e;
+}
+
+.ipsuperview-labelform__check > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 42px;
+}
+
+.ipsuperview-labelform__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.ipsuperview-listintro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(21, 101, 192, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.7), transparent 35%),
+    linear-gradient(135deg, #eef5ff 0%, #f8fbff 55%, #eef3fb 100%);
+  box-shadow: 0 18px 36px rgba(25, 73, 112, 0.08);
+}
+
+.ipsuperview-listintro__body {
+  max-width: 760px;
+}
+
+.ipsuperview-listintro__eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #496179;
+  font-weight: 700;
+}
+
+.ipsuperview-listintro__title {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: #17314b;
+}
+
+.ipsuperview-listintro__text {
+  margin: 0;
+  color: #41566a;
+  line-height: 1.6;
+}
+
+.ipsuperview-listintro__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.ipsuperview-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(23, 49, 75, 0.1);
+  color: #27445d;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.ipsuperview-listintro__actions {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ipsuperview-searchwrap {
+  border: 1px solid rgba(17, 33, 54, 0.08);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 250, 252, 0.98) 100%);
+  box-shadow: 0 14px 34px rgba(19, 33, 51, 0.05);
+  padding: 1rem;
+}
+
+@media (max-width: 720px) {
+  .ipsuperview-workspace__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ipsuperview-workspace {
+    position: static;
+  }
+
+  .ipsuperview-listintro {
+    padding: 1rem;
+  }
+
+  .ipsuperview-listintro__title {
+    font-size: 1.35rem;
+  }
+
+  .ipsuperview-card__value {
+    font-size: 1.7rem;
+  }
+}
