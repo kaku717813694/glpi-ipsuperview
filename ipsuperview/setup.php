@@ -1,6 +1,6 @@
 <?php
 
-define('PLUGIN_IPSUPERVIEW_VERSION', '1.0.0');
+define('PLUGIN_IPSUPERVIEW_VERSION', '1.0.1');
 
 require_once __DIR__ . '/inc/i18n.php';
 
@@ -40,9 +40,9 @@ function plugin_version_ipsuperview()
     return [
         'name'         => __('IP SuperView', 'ipsuperview'),
         'version'      => PLUGIN_IPSUPERVIEW_VERSION,
-        'author'       => 'OpenAI Codex',
-        'license'      => 'GPLv2+',
-        'homepage'     => 'https://glpi-project.org/',
+        'author'       => 'kaku717813694',
+        'license'      => 'MIT',
+        'homepage'     => 'https://github.com/kaku717813694/glpi-ipsuperview',
         'requirements' => [
             'glpi' => [
                 'min' => '10.0',
